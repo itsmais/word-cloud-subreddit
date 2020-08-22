@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+h1,h2,h3,footer,button,p,a{
+    font-family: 'Lato', sans-serif;
+}
+a{
+    color: #FF4500;
+}
+h3{
+    margin-bottom: 20px;
+    font-weight: lighter;
+    font-size: medium;
+}
+h1, h3, h2, footer, p{
+    text-align: center;
+}
+.bold-title{
+    font-weight: 600;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #FF4500;
+    border-color: #FF4500;
+    margin-top: 10px;
+}
+footer{
+    font-size: small;
+}
+.main{
+    /* color: white;
+    background-color: #88898C; */
+    border-color: #FF4500; 
+    padding: 30px;
+    border-width: 3px;
+    border-style: solid;
+    /* font-family: 'Heebo', sans-serif; */
+    /*max-width: 800px;*/
+    align-content: center;
+}
+input{
+    align-content: center;
+    text-align: center;
+}
+
+.main p{
+    color: #FFF;
+}
+
+
+.time-result{
+    font-weight: 500;
+    text-decoration: underline;
+}
+.content{
+    margin-top: 80px;
+}
+.subreddit{
+    color: #FF4500;
+}
