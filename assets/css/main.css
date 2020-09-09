@@ -26,14 +26,10 @@ footer{
     font-size: small;
 }
 .main{
-    /* color: white;
-    background-color: #88898C; */
     border-color: #FF4500; 
     padding: 30px;
     border-width: 3px;
     border-style: solid;
-    /* font-family: 'Heebo', sans-serif; */
-    /*max-width: 800px;*/
     align-content: center;
 }
 input{
