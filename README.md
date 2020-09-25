@@ -5,6 +5,7 @@ Takes the name of a subreddit, parses the post titles of the first page on that 
 <img  src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square"  alt="PRs Welcome">
 </a>
 </p>
+
 ### Screen of the Website
 <p float="left">
   <img src="screenshots/screenshot.PNG" width="700" />
