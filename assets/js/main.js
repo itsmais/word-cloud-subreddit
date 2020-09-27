@@ -2,7 +2,6 @@ function makeACloud(){
     let wordsArray = [];
     var wordsDict = {};
     let subredditURL = document.getElementById("subreddit-url").value.toLowerCase();
-    // let subredditURL = "AmItheAsshole";
     var requestOptions = {
     method: 'GET',
     redirect: 'follow'
@@ -12,7 +11,6 @@ function makeACloud(){
     fetch(url, requestOptions)
     .then(response => response.text())
     .then(result => {
-
         var jsonObj = JSON.parse(result);
         document.getElementById("cloud-result").innerHTML="";
         for (let i=0; i<jsonObj.data["children"].length; i++){
@@ -28,12 +26,8 @@ function makeACloud(){
             wordsDict[wordsArray[i]] ++;
         }
 
-       // remove numbers question marks and single letters
-        
         document.getElementById("cloud-result").style.height="400px";
-        var data = [
-
-          ];
+        var data = [];
         for(var key in wordsDict) {
             let line = [];
             line.push(key);
@@ -41,11 +35,7 @@ function makeACloud(){
             data.push(line);
         }
         
-
         var chart = anychart.tagCloud(data);
-        // set a chart title
-        // chart.title('15 most spoken languages')
-        // set an array of angles at which the words will be laid out
         chart.angles([0])
         // enable a color range
         chart.colorRange(true);
@@ -54,14 +44,11 @@ function makeACloud(){
         // display the word cloud chart
         chart.container("cloud-result");
         chart.draw();
-
     })
     .catch(error => 
         {
             console.log('error', error)
         });
-
-        
 }
 
-// remove common words from the array
+// to do: remove common words from the array
