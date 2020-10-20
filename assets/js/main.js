@@ -1,6 +1,7 @@
 function makeACloud(){
     let wordsArray = [];
     var wordsDict = {};
+    let filter = ["the", "and", "a", "an"];
     let subredditURL = document.getElementById("subreddit-url").value.toLowerCase();
     var requestOptions = {
     method: 'GET',
@@ -16,8 +17,10 @@ function makeACloud(){
         for (let i=0; i<jsonObj.data["children"].length; i++){
             let sentence = jsonObj.data["children"][i]["data"]["title"].split(" ");
             for (word in sentence){
-                wordsArray.push(sentence[word]);
-                wordsDict[sentence[word]] = 0;
+                if(filter.indexOf(word) === -1){
+                    wordsArray.push(sentence[word]);
+                    wordsDict[sentence[word]] = 0;
+                }
             }
         }
         
