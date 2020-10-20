@@ -10,3 +10,6 @@ Takes the name of a subreddit, parses the post titles of the first page on that 
 <p float="left">
   <img src="screenshots/screenshot.PNG" width="700" />
 </p>
+
+### Contributors
+- @[Varadpoddar](https://github.com/varadpoddar): Updated main.js to filter linking words.
