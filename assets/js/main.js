@@ -1,7 +1,7 @@
 function makeACloud(){
     let wordsArray = [];
     var wordsDict = {};
-    let filter = ["the", "and", "a", "an"];
+    let filter = ["the",",",".","&","AND","And","A","An","The","with","to", "To", "and","for","For", "a", "an"];
     let subredditURL = document.getElementById("subreddit-url").value.toLowerCase();
     var requestOptions = {
     method: 'GET',
@@ -17,7 +17,7 @@ function makeACloud(){
         for (let i=0; i<jsonObj.data["children"].length; i++){
             let sentence = jsonObj.data["children"][i]["data"]["title"].split(" ");
             for (word in sentence){
-                if(filter.indexOf(word) === -1){
+                if(filter.indexOf(sentence[word]) ===  -1){
                     wordsArray.push(sentence[word]);
                     wordsDict[sentence[word]] = 0;
                 }
