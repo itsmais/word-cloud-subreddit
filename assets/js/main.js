@@ -7,7 +7,7 @@ function makeACloud(){
     method: 'GET',
     redirect: 'follow'
     };
-    let url = "https://www.reddit.com/r/"+subredditURL+".json";
+    let url = "https://www.reddit.com/r/"+subredditURL+".json?limit=100";
     console.log(url);
     fetch(url, requestOptions)
     .then(response => response.text())
