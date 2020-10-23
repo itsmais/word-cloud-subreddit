@@ -8,6 +8,7 @@ Takes the name of a subreddit, parses the post titles of the first page on that 
 
 ### Contributors
 - [@Varadpoddar](https://github.com/varadpoddar): Updated main.js to filter linking words.
+- [@shobhi1310](https://github.com/shobhi1310): Fixed the capitalizations of keywords, and separated the punctuations from keywords.
 
 ### Screen of the Website
 <p float="left">
