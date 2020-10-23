@@ -1,7 +1,8 @@
 function makeACloud(){
     let wordsArray = [];
     var wordsDict = {};
-    let filter = ["the",",",".","&","AND","And","A","An","The","with","to", "To", "and","for","For", "a", "an"];
+    let stop_words = ["the","and","a","an","with","to","and","for","of"];
+    let punctuations = [",",".","&",";"];
     let subredditURL = document.getElementById("subreddit-url").value.toLowerCase();
     var requestOptions = {
     method: 'GET',
@@ -17,7 +18,7 @@ function makeACloud(){
         for (let i=0; i<jsonObj.data["children"].length; i++){
             let sentence = jsonObj.data["children"][i]["data"]["title"].split(" ");
             for (word in sentence){
-                if(filter.indexOf(sentence[word]) ===  -1){
+                if(stop_words.indexOf(sentence[word]) ===  -1 && stop_words.map(capitalize).indexOf(sentence[word]) === -1 &&  punctuations.indexOf(sentence[word]) === -1){
                     wordsArray.push(sentence[word]);
                     wordsDict[sentence[word]] = 0;
                 }
@@ -52,6 +53,11 @@ function makeACloud(){
         {
             console.log('error', error)
         });
+}
+
+const capitalize = (s) => {
+  if (typeof s !== 'string') return ''
+  return s.charAt(0).toUpperCase() + s.slice(1)
 }
 
 // to do: remove common words from the array
