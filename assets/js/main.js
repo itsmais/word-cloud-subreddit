@@ -1,11 +1,11 @@
 function makeACloud(){
     let wordsArray = [];
     var wordsDict = {};
-    let stop_words = ["the","and","a","an","with","to","for","of","in","on","at","this","i","or","is"];
+    let stop_words = ["the","and","with","for","this"];
     let subredditURL = document.getElementById("subreddit-url").value.toLowerCase();
     var requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
+        method: 'GET',
+        redirect: 'follow'
     };
     let url = "https://www.reddit.com/r/"+subredditURL+".json?limit=100";
     console.log(url);
@@ -15,11 +15,12 @@ function makeACloud(){
         var jsonObj = JSON.parse(result);
         document.getElementById("cloud-result").innerHTML="";
         for (let i=0; i<jsonObj.data["children"].length; i++){
-            let sentence = jsonObj.data["children"][i]["data"]["title"].split(" ");
+            // Split the sentence using the regex to eliminate 
+            let sentence = jsonObj.data["children"][i]["data"]["title"].split(/[\s|\.,—\-\/#!$%\^&\*;:{}=\-_`~()@\+\?><\[\]]/);
             for (word in sentence){
-                if(stop_words.indexOf(sentence[word].toLowerCase()) ===  -1 && !sentence[word].match(/^[|\.,—\-\/#!$%\^&\*;:{}=\-_`~()@\+\?><\[\]\+]/)){
-                    wordsArray.push(sentence[word]);
-                    wordsDict[sentence[word]] = 0;
+                if(sentence[word].length > 2 && isNaN(sentence[word])&&stop_words.indexOf(sentence[word].toLowerCase()) ===  -1){
+                    wordsArray.push(sentence[word].toLowerCase());
+                    wordsDict[sentence[word].toLowerCase()] = 0;
                 }
             }
         }
@@ -52,4 +53,7 @@ function makeACloud(){
         {
             console.log('error', error)
         });
-}
+    }
+
+
+    // to do: remove common words from the array
