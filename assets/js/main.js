@@ -1,7 +1,7 @@
 function makeACloud(){
     let wordsArray = [];
     var wordsDict = {};
-    let stop_words = ["the","and","with","for","this"];
+    let stop_words = ["the","and","a","an","with","to","for","of","in","on","at","this","i","or","is"];
     let subredditURL = document.getElementById("subreddit-url").value.toLowerCase();
     var requestOptions = {
         method: 'GET',
@@ -15,8 +15,7 @@ function makeACloud(){
         var jsonObj = JSON.parse(result);
         document.getElementById("cloud-result").innerHTML="";
         for (let i=0; i<jsonObj.data["children"].length; i++){
-            // Split the sentence using the regex to eliminate 
-            let sentence = jsonObj.data["children"][i]["data"]["title"].split(/[\s|\.,—\-\/#!$%\^&\*;:{}=\-_`~()@\+\?><\[\]]/);
+            let sentence = jsonObj.data["children"][i]["data"]["title"].split(/[\s|\.,—\-\/\’ \'\"#!$%\^&\*;:{}=\-_`~()@\+\?><\[\]]/);
             for (word in sentence){
                 if(sentence[word].length > 2 && isNaN(sentence[word])&&stop_words.indexOf(sentence[word].toLowerCase()) ===  -1){
                     wordsArray.push(sentence[word].toLowerCase());
