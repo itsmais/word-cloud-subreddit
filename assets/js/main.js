@@ -1,8 +1,7 @@
 function makeACloud(){
     let wordsArray = [];
     var wordsDict = {};
-    let stop_words = ["the","and","a","an","with","to","and","for","of"];
-    let punctuations = [",",".","&",";"];
+    let stop_words = ["the","and","a","an","with","to","for","of","in","on","at","this","i","or","is"];
     let subredditURL = document.getElementById("subreddit-url").value.toLowerCase();
     var requestOptions = {
     method: 'GET',
@@ -18,13 +17,13 @@ function makeACloud(){
         for (let i=0; i<jsonObj.data["children"].length; i++){
             let sentence = jsonObj.data["children"][i]["data"]["title"].split(" ");
             for (word in sentence){
-                if(stop_words.indexOf(sentence[word]) ===  -1 && stop_words.map(capitalize).indexOf(sentence[word]) === -1 &&  punctuations.indexOf(sentence[word]) === -1){
+                if(stop_words.indexOf(sentence[word].toLowerCase()) ===  -1 && !sentence[word].match(/^[|\.,—\-\/#!$%\^&\*;:{}=\-_`~()@\+\?><\[\]\+]/)){
                     wordsArray.push(sentence[word]);
                     wordsDict[sentence[word]] = 0;
                 }
             }
         }
-        
+
         // count frequencies
         for (i in wordsArray){
             wordsDict[wordsArray[i]] ++;
@@ -38,7 +37,7 @@ function makeACloud(){
             line.push(wordsDict[key])
             data.push(line);
         }
-        
+
         var chart = anychart.tagCloud(data);
         chart.angles([0])
         // enable a color range
@@ -49,15 +48,8 @@ function makeACloud(){
         chart.container("cloud-result");
         chart.draw();
     })
-    .catch(error => 
+    .catch(error =>
         {
             console.log('error', error)
         });
 }
-
-const capitalize = (s) => {
-  if (typeof s !== 'string') return ''
-  return s.charAt(0).toUpperCase() + s.slice(1)
-}
-
-// to do: remove common words from the array
