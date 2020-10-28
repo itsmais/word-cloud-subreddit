@@ -17,9 +17,9 @@ function makeACloud(){
         for (let i=0; i<jsonObj.data["children"].length; i++){
             let sentence = jsonObj.data["children"][i]["data"]["title"].split(/[\s|\.,—\-\/\’ \'\"#!$%\^&\*;:{}=\-_`~()@\+\?><\[\]]/);
             for (word in sentence){
-                if(sentence[word].length > 2 && isNaN(sentence[word])&&stop_words.indexOf(sentence[word].toLowerCase()) ===  -1){
-                    wordsArray.push(sentence[word].toLowerCase());
-                    wordsDict[sentence[word].toLowerCase()] = 0;
+                if(sentence[word].length > 1 && isNaN(sentence[word]) && stop_words.indexOf(sentence[word].toLowerCase()) === -1){
+                    wordsArray.push(sentence[word]);
+                    wordsDict[sentence[word]] = 0;
                 }
             }
         }
