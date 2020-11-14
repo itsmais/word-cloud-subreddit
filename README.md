@@ -10,6 +10,9 @@ Takes the name of a subreddit, parses the post titles of the first page on that 
 - [@Varadpoddar](https://github.com/varadpoddar): Updated main.js to filter linking words.
 - [@shobhi1310](https://github.com/shobhi1310): Fixed the capitalizations of keywords, and separated the punctuations from keywords.
 
+### Highlights
+- Featured in one of AnyChart's [tweets](https://twitter.com/AnyChart/status/1327363025909772292).
+
 ### Screen of the Website
 <p float="left">
   <img src="screenshots/screenshot.PNG" width="700" />
