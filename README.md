@@ -11,7 +11,7 @@ Takes the name of a subreddit, parses the post titles of the first page on that 
 - [@shobhi1310](https://github.com/shobhi1310): Fixed the capitalizations of keywords, and separated the punctuations from keywords.
 
 ### Highlights
-- Featured in one of AnyChart's [tweets](https://twitter.com/AnyChart/status/1327363025909772292).
+- Featured in one of AnyChart's [DataViz Weekly](https://www.anychart.com/blog/2020/11/13/energy-subreddits-crime-ice-cream-data-viz/).
 
 ### Screen of the Website
 <p float="left">
