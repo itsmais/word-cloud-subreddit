@@ -1,7 +1,7 @@
 function makeACloud(){
     let wordsArray = [];
     var wordsDict = {};
-    let stop_words = ["the","and","a","an","with","to","for","of","in","on","at","this","i","or","is","you","your","my","when","what"];
+    let stop_words = ["the","and","a","an","with","to","for","of","in","on","at","this","i","or","is","you","your","my","when","what","how","that"];
     let subredditURL = document.getElementById("subreddit-url").value.toLowerCase();
     var requestOptions = {
     method: 'GET',
