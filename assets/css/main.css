@@ -73,3 +73,7 @@ input {
 .subreddit {
   color: #ff4500;
 }
+
+.footer-link:hover {
+  color: #ff4500;
+}
