@@ -1,57 +1,84 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Cloud a Subreddit</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-		<!-- Favicon -->
-		<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-		<!-- Favicon ends -->
-		<script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
-		<script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body >
+<head>
+	<title>Cloud a Subreddit</title>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1, user-scalable=no" />
 
-		<!-- Header -->
-			<header id="header">
-			</header>
+	<!-- Favicon -->
+	<link rel="icon"
+		  type="image/png"
+		  sizes="32x32"
+		  href="assets/img/favicon-32x32.png">
+	<link rel="icon"
+		  type="image/png"
+		  sizes="16x16"
+		  href="assets/img/favicon-16x16.png">
+	<!-- Favicon ends -->
+	<script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+	<script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+	<link rel="stylesheet"
+		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+		  crossorigin="anonymous">
+	<link rel="stylesheet"
+		  href="assets/css/main.css" />
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header id="header">
+	</header>
 
 
-<div class="row align-items-center content">
-	<div class="col-md-6 offset-md-3 main">
-		<h1>Cloud &#9729;&#65039; a <span class="subreddit">Subreddit</span></h1>
-		<h3>turns a subreddit into a word cloud.</h3>
-		<div class="row vertical-center-row">
-			<div class="text-center col-md-12 col-md-offset-4" >
-				<div class="form-group mx-sm-3 mb-2">
-					<input type="text" class="form-control" id="subreddit-url" placeholder="subreddit's name without spaces example: webdev">
+	<div class="row align-items-center content">
+		<div class="col-md-6 offset-md-3 main">
+			<h1>Cloud &#9729;&#65039; a <span class="subreddit">Subreddit</span></h1>
+			<h3>turns a subreddit into a word cloud.</h3>
+			<div class="row vertical-center-row">
+				<div class="text-center col-md-12 col-md-offset-4">
+					<div class="form-group mx-sm-3 mb-2">
+						<input type="text"
+							   class="form-control"
+							   id="subreddit-url"
+							   placeholder="subreddit's name without spaces example: webdev">
+					</div>
+					<button type="button"
+							class="btn btn-secondary"
+							id="check-status-btn"
+							onclick="makeACloud()">make a cloud</button>
+					<p id="cloud-result"></p>
 				</div>
-			<button type="button" class="btn btn-secondary" id="check-status-btn" onclick="makeACloud()">make a cloud</button>
-			<p id="cloud-result"></p>
 			</div>
 		</div>
 	</div>
-</div> 
-			
 
 
-		<!-- Footer -->
-			<footer>
-			</br>
-				<p>Made with ❤ in Beirut, by <a target="_blank" href="https://twitter.com/mais_hatem">Mais</a>, in August 2020.
-				</p>
-			</footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/main.js"></script>
-			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!-- Footer -->
+	<footer>
+		</br>
+		<p>made wtih ♡ by <a target="_blank"
+			   href="https://twitter.com/mais_hatem">mais</a>.
+		</p>
+	</footer>
 
-	</body>
+	<!-- Scripts -->
+	<script src="assets/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"></script>
+
+</body>
+
 </html>
