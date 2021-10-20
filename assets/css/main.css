@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
-
+:root {
+  --main-color-red: #ff4500;
+  --basic-white: #fff;
+  --gray-white: #ccc;
+}
 h1,
 h2,
 h3,
@@ -11,7 +15,7 @@ a {
 }
 
 a {
-  color: #ff4500;
+  color: var(--main-color-red);
 }
 
 h3 {
@@ -33,9 +37,9 @@ p {
 }
 
 .btn-secondary {
-  color: #fff;
-  background-color: #ff4500;
-  border-color: #ff4500;
+  color: var(--basic-white);
+  background-color: var(--main-color-red);
+  border-color: var(--main-color-red);
   margin-top: 10px;
 }
 
@@ -44,7 +48,7 @@ footer {
 }
 
 .main {
-  border-color: #ff4500;
+  border-color: var(--main-color-red);
   padding: 30px;
   border-width: 3px;
   border-style: solid;
@@ -57,7 +61,7 @@ input {
 }
 
 .main p {
-  color: #fff;
+  color: var(--basic-white);
 }
 
 .time-result {
@@ -71,11 +75,11 @@ input {
 }
 
 .subreddit {
-  color: #ff4500;
+  color: var(--main-color-red);
 }
 
 .footer-link:hover {
-  color: #ff4500;
+  color: var(--main-color-red);
 }
 
 #loader {
@@ -86,8 +90,8 @@ input {
   margin : 2em auto;
   border-radius: 50%;
   -webkit-animation: spin 2s linear infinite;
-  border: 10px solid #ccc;
-  border-top-color: #ff4500;
+  border: 10px solid var(--gray-white);
+  border-top-color: var(--main-color-red);
   animation: spin 2s linear infinite;
 }
 
