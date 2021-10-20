@@ -1,4 +1,6 @@
 function makeACloud(){
+    document.getElementById("cloud-result").style.display="none";
+    document.getElementById("loader").style.display="block";
     let wordsArray = [];
     var wordsDict = {};
     let stop_words = ["the","and","a","an","with","to","for","of","in","on","at","this","i","or","is","you","your","my","when","what","how","that"];
@@ -47,6 +49,9 @@ function makeACloud(){
         // display the word cloud chart
         chart.container("cloud-result");
         chart.draw();
+    }).then(() => {
+        document.getElementById("loader").style.display="none";
+        document.getElementById("cloud-result").style.display="block";
     })
     .catch(error =>
         {
