@@ -1,10 +1,19 @@
 function makeACloud(){
-    document.getElementById("cloud-result").style.display="none";
-    document.getElementById("loader").style.display="block";
     let wordsArray = [];
     var wordsDict = {};
     let stop_words = ["the","and","a","an","with","to","for","of","in","on","at","this","i","or","is","you","your","my","when","what","how","that"];
     let subredditURL = document.getElementById("subreddit-url").value.toLowerCase();
+    if(subredditURL.length == 0){
+        document.getElementById("error").style.display="block";
+        document.getElementById("subreddit-url").classList.add("red-border");
+        return;
+    }
+    document.getElementById("subreddit-url").classList.remove("red-border");
+    document.getElementById("error").style.display="none";
+
+    document.getElementById("cloud-result").style.display="none";
+    document.getElementById("loader").style.display="block";
+    
     var requestOptions = {
     method: 'GET',
     redirect: 'follow'
