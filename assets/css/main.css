@@ -104,3 +104,15 @@ input {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+#error{
+  display:none;
+  font-weight: 600;
+  font-size: large;
+  color: red;
+}
+
+.red-border{
+  border: 3px solid red;
+  box-shadow: 0px 0px 5px rgba(255, 0, 0, 0.267);
+}
