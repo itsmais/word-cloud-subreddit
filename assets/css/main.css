@@ -82,6 +82,10 @@ input {
   color: var(--main-color-red);
 }
 
+#toggle {
+  cursor: pointer;
+}
+
 #loader {
   display:none;
   z-index: 1;

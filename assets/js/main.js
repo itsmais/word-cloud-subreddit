@@ -57,6 +57,11 @@ function makeACloud(){
         chart.colorRange().length('80%');
         // display the word cloud chart
         chart.container("cloud-result");
+        if (document.getElementById("toggle").innerHTML == "⛅") {
+          chart.background().fill("#fff")
+        } else {
+          chart.background().fill("rgb(24, 26, 27)")
+        }
         chart.draw();
     }).then(() => {
         document.getElementById("loader").style.display="none";
@@ -67,3 +72,42 @@ function makeACloud(){
             console.log('error', error)
         });
 }
+
+function lightsOut() {
+  document.getElementById("toggle").innerHTML = "&#9729;&#65039";
+  document.body.style.background = "rgb(24, 26, 27)";
+  document.body.style.color = "rgb(209, 205, 199)";
+  document.getElementById("subreddit-url").style.background = "rgb(24, 26, 27)";
+  document.getElementById("subreddit-url").style.color = "rgb(158, 150, 137)";
+  document.getElementById("cloud-result").style.background = "rgb(24, 26, 27)";
+
+  try {
+    var paths = document.querySelectorAll("path");
+    paths[0].setAttribute("style", "fill:rgb(24, 26, 27)");
+  } catch (error) {
+    return;
+  }
+}
+
+function lightsOn() {
+  document.getElementById("toggle").innerHTML = "⛅";
+  document.body.style.background = "#fff";
+  document.body.style.color = "#000";
+  document.getElementById("subreddit-url").style.background = "#fff";
+  document.getElementById("subreddit-url").style.color = "#6c757d";
+
+  try {
+    var paths = document.querySelectorAll("path");
+    paths[0].setAttribute("style", "fill:#fff"); 
+  } catch (error) {
+    return;
+  }
+}
+
+document.getElementById("toggle").addEventListener("click", () => {
+  if (document.getElementById("toggle").innerHTML == "⛅") {
+    lightsOut();
+  } else {
+    lightsOn();
+  }
+});
