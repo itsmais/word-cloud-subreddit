@@ -11,9 +11,6 @@ Takes the name of a subreddit, parses the post titles of the first page on that 
 - Featured in one of AnyChart's [DataViz Weekly](https://www.anychart.com/blog/2020/11/13/energy-subreddits-crime-ice-cream-data-viz/).
 
 ## 🚀 To do
-- remove Bootstrap and replace it with native css styles.
-- add a loader/spinner for the cloud to load.
-- add a footer link to the repository.
 - add an about page -> explain where the project scrapes data from.
 
 ## 🖼 Screen of the Website
